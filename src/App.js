@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="app">
       <h1>Celibrities</h1>
-      <div className="list">
+      <div className="celebrities-list">
         {celebrities.map((data) => (
           <Celeb
             dispatchCelebrities={dispatchCelebrities}
