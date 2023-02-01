@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { updateCelebrity } from "./state/actions";
 import "./Celeb.css";
 
 const Celeb = ({
@@ -10,10 +9,10 @@ const Celeb = ({
   country,
   desc,
   id,
-  dispatchCelebrities,
   isActive,
   accordianHandler,
   openModalHandler,
+  updateCelebrityHandler,
 }) => {
   const [isEditMode, setEditMode] = useState(false);
   const [formData, setFormData] = useState({
@@ -61,14 +60,10 @@ const Celeb = ({
       });
     }
 
-    updateCelebrity(
-      {
-        id: id,
-        picture: picture,
-        ...formData,
-      },
-      dispatchCelebrities
-    );
+    updateCelebrityHandler({
+      picture: picture,
+      ...formData,
+    });
 
     setEditMode(false);
     setFormData({

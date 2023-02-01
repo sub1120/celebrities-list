@@ -2,7 +2,11 @@ import "./App.css";
 import Celeb from "./Celeb";
 import { useEffect, useReducer, useState } from "react";
 import stateReducer from "./state/reducer";
-import { deleteCelebrity, fetchCelebrities } from "./state/actions";
+import {
+  deleteCelebrity,
+  fetchCelebrities,
+  updateCelebrity,
+} from "./state/actions";
 import Modal from "./components/Modal/Modal";
 import ModalContent from "./components/Modal/ModalContent";
 
@@ -38,6 +42,16 @@ function App() {
     closeModalHandler();
   };
 
+  const updateCelebrityHandler = (formData) => {
+    updateCelebrity(
+      {
+        id: activeSlide,
+        ...formData,
+      },
+      dispatchCelebrities
+    );
+  };
+
   return (
     <div className="app">
       {isModelOpen && (
@@ -65,6 +79,7 @@ function App() {
             isActive={activeSlide === data.id ? true : false}
             accordianHandler={accordianHandler}
             openModalHandler={openModalHandler}
+            updateCelebrityHandler={updateCelebrityHandler}
           ></Celeb>
         ))}
       </div>
