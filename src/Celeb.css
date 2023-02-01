@@ -1,0 +1,100 @@
+.celeb {
+  width: 100%;
+  padding: 20px;
+  margin: 10px 0px;
+  border-radius: 10px;
+  border: 1px solid #756e6e;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile {
+  width: 60px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.profile img {
+  width: 60px;
+  height: 60px;
+}
+
+.plus-icon span {
+  color: #000000;
+}
+
+.content {
+  display: block;
+  height: 0px;
+  overflow: hidden;
+  transition: 0.5s ease-in-out height;
+}
+
+.content.active {
+  height: 300px;
+}
+
+.basic-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+
+label {
+  color: #272424;
+  padding: 5px 10px;
+}
+
+.input {
+  width: 110px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid #756e6e;
+  background-color: #ffffff;
+}
+
+.input.edit {
+  border: none;
+}
+
+.textarea {
+  padding: 5px 10px;
+  width: 100%;
+  height: 140px;
+  border-radius: 10px;
+  border: 1px solid #756e6e;
+  background-color: #ffffff;
+}
+
+.textarea.edit {
+  border: none;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.action-button {
+  cursor: pointer;
+}
+
+.del-icon span,
+.cancel-icon span {
+  color: rgb(235, 34, 34);
+}
+
+.done-icon span {
+  color: rgb(30, 141, 30);
+}

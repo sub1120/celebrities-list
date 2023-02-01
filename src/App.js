@@ -1,6 +1,6 @@
 import "./App.css";
 import Celeb from "./Celeb";
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import stateReducer from "./state/reducer";
 import { fetchCelebrities } from "./state/actions";
 
@@ -12,9 +12,15 @@ function App() {
     initialState
   );
 
+  const [activeSlide, setActiveSlide] = useState(0);
+
   useEffect(() => {
     fetchCelebrities(dispatchCelebrities);
   }, []);
+
+  const accordianHandler = (id) => {
+    setActiveSlide(id);
+  };
 
   return (
     <div className="app">
@@ -31,6 +37,8 @@ function App() {
             desc={data.desc}
             key={data.id}
             id={data.id}
+            isActive={activeSlide === data.id ? true : false}
+            accordianHandler={accordianHandler}
           ></Celeb>
         ))}
       </div>
