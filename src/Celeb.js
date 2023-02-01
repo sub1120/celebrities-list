@@ -13,6 +13,7 @@ const Celeb = ({
   dispatchCelebrities,
   isActive,
   accordianHandler,
+  openModalHandler,
 }) => {
   const [isEditMode, setEditMode] = useState(false);
   const [formData, setFormData] = useState({
@@ -46,7 +47,7 @@ const Celeb = ({
   };
 
   const deleteHandler = (e) => {
-    deleteCelebrity(dispatchCelebrities, id);
+    openModalHandler();
   };
 
   const cancleHandler = () => {

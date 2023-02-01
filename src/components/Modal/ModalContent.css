@@ -1,0 +1,30 @@
+.confirm {
+  position: relative;
+  font-size: 20px;
+  padding: 20px;
+  height: 120px;
+}
+
+.confirm-actions {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.confirm-actions button {
+  cursor: pointer;
+  padding: 5px 10px;
+  margin: 0px 5px;
+  border-radius: 5px;
+}
+
+.confirm-yes {
+  background-color: rgb(243, 69, 5);
+  color: #ffffff;
+  border: none;
+}
+
+.confirm-no {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+}

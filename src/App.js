@@ -2,11 +2,14 @@ import "./App.css";
 import Celeb from "./Celeb";
 import { useEffect, useReducer, useState } from "react";
 import stateReducer from "./state/reducer";
-import { fetchCelebrities } from "./state/actions";
+import { deleteCelebrity, fetchCelebrities } from "./state/actions";
+import Modal from "./components/Modal/Modal";
+import ModalContent from "./components/Modal/ModalContent";
 
 const initialState = [];
 
 function App() {
+  const [isModelOpen, setIsModelOpen] = useState(false);
   const [celebrities, dispatchCelebrities] = useReducer(
     stateReducer,
     initialState
@@ -22,8 +25,30 @@ function App() {
     setActiveSlide(id);
   };
 
+  const openModalHandler = () => {
+    setIsModelOpen(true);
+  };
+
+  const closeModalHandler = () => {
+    setIsModelOpen(false);
+  };
+
+  const confirmModalHandler = () => {
+    deleteCelebrity(dispatchCelebrities, activeSlide);
+    closeModalHandler();
+  };
+
   return (
     <div className="app">
+      {isModelOpen && (
+        <Modal>
+          <ModalContent
+            closeModalHandler={closeModalHandler}
+            confirmModalHandler={confirmModalHandler}
+            id={activeSlide}
+          />
+        </Modal>
+      )}
       <h1>Celibrities</h1>
       <div className="celebrities-list">
         {celebrities.map((data) => (
@@ -39,6 +64,7 @@ function App() {
             id={data.id}
             isActive={activeSlide === data.id ? true : false}
             accordianHandler={accordianHandler}
+            openModalHandler={openModalHandler}
           ></Celeb>
         ))}
       </div>
