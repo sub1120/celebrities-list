@@ -19,6 +19,7 @@ export const updateCelebrity = (updatedCelibrity, dispatchCelebrities) => {
     updatedCelibrity.picture,
     updatedCelibrity.fullname,
     updatedCelibrity.age,
+    updatedCelibrity.gender,
     updatedCelibrity.country,
     updatedCelibrity.desc
   );

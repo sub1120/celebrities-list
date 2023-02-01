@@ -22,6 +22,7 @@ const Celeb = ({
     gender,
     country,
     desc,
+    error: "",
   });
 
   const inputHandler = (event) => {
@@ -34,6 +35,18 @@ const Celeb = ({
   const submitHandler = (e) => {
     e.preventDefault();
 
+    if (
+      !formData.fullname ||
+      !formData.age ||
+      !formData.country ||
+      !formData.gender ||
+      !formData.desc
+    )
+      return setFormData({
+        ...formData,
+        error: `Fill all fields!`,
+      });
+
     updateCelebrity(
       {
         id: id,
@@ -44,6 +57,10 @@ const Celeb = ({
     );
 
     setEditMode(false);
+    setFormData({
+      ...formData,
+      error: "",
+    });
   };
 
   const deleteHandler = (e) => {
@@ -57,6 +74,7 @@ const Celeb = ({
       gender,
       country,
       desc,
+      error: "",
     });
     setEditMode(false);
   };
@@ -150,7 +168,7 @@ const Celeb = ({
             </div>
           </section>
           <section className="bottom">
-            <div className="error"></div>
+            <div className="error">{formData.error}</div>
             <div className="actions">
               <div
                 className={`action-button ${
