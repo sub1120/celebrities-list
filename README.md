@@ -1,11 +1,13 @@
-# Factwise Assginment
+# Factwise Assginment | [Deployed Link](https://main--famous-cheesecake-086366.netlify.app/)
 
 ## Submission Insights
 
-- Developed in 6 hours of productive work.
+- Developed in 12 hours of productive work.
 - Clean and Optimized code.
+- No external CSS library.
+- Mobile resposive.
 
-## Instructions to Follow
+## Assginment Instructions
 
 You are a famous hacker who has access to a list of the world's most famous celebrities.
 You have to create a system where you can view and edit their details to hide their public presence.
