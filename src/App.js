@@ -63,8 +63,8 @@ function App() {
           />
         </Modal>
       )}
-      <h1>Celibrities</h1>
       <div className="celebrities-list">
+        <h1 className="celebrities-heading">Celebrities</h1>
         {celebrities.map((data) => (
           <Celebrity
             picture={data.picture}
