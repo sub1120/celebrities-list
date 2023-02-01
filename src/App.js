@@ -40,6 +40,8 @@ function App() {
     );
   };
 
+  console.log(celebrities);
+
   const accordianHandler = (id) => {
     setActiveItem(id);
   };

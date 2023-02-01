@@ -78,7 +78,7 @@ const Celebrity = ({
       ...formData,
     });
 
-    resetForm();
+    setEditMode(false);
   };
 
   const deleteHandler = (e) => {
