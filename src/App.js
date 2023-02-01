@@ -59,7 +59,7 @@ function App() {
           <ModalContent
             closeModalHandler={closeModalHandler}
             deleteCelebrityHandler={deleteCelebrityHandler}
-            id={activeSlide}
+            id={activeItem}
           />
         </Modal>
       )}
