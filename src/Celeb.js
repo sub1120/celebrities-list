@@ -54,6 +54,13 @@ const Celeb = ({
       });
     }
 
+    if (/\d/.test(formData.country)) {
+      return setFormData({
+        ...formData,
+        error: `Country cannot have digits!`,
+      });
+    }
+
     updateCelebrity(
       {
         id: id,
