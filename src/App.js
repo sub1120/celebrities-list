@@ -1,32 +1,47 @@
 import "./App.css";
-import Celebrity from "../components/Celebrity";
-import { useEffect, useReducer, useState } from "react";
-import stateReducer from "./state/reducer";
-import {
-  deleteCelebrity,
-  fetchCelebrities,
-  updateCelebrity,
-} from "./state/actions";
+import Celebrity from "./components/Celebrity/Celebrity";
 import Modal from "./components/Modal/Modal";
 import ModalContent from "./components/Modal/ModalContent";
 
-const initialState = [];
+import { useEffect, useReducer, useState } from "react";
+import appStateReducer from "./state/reducer";
+import {
+  fetchCelebrities,
+  updateCelebrity,
+  deleteCelebrity,
+} from "./state/actions";
+
+const initialAppState = [];
 
 function App() {
   const [isModelOpen, setIsModelOpen] = useState(false);
-  const [celebrities, dispatchCelebrities] = useReducer(
-    stateReducer,
-    initialState
+  const [activeItem, setActiveItem] = useState(0);
+  const [celebrities, dispatchAppState] = useReducer(
+    appStateReducer,
+    initialAppState
   );
 
-  const [activeSlide, setActiveSlide] = useState(0);
-
   useEffect(() => {
-    fetchCelebrities(dispatchCelebrities);
+    fetchCelebrities(dispatchAppState);
   }, []);
 
+  const deleteCelebrityHandler = () => {
+    deleteCelebrity(dispatchAppState, activeItem);
+    closeModalHandler();
+  };
+
+  const updateCelebrityHandler = (formData) => {
+    updateCelebrity(
+      {
+        id: activeItem,
+        ...formData,
+      },
+      dispatchAppState
+    );
+  };
+
   const accordianHandler = (id) => {
-    setActiveSlide(id);
+    setActiveItem(id);
   };
 
   const openModalHandler = () => {
@@ -37,28 +52,13 @@ function App() {
     setIsModelOpen(false);
   };
 
-  const confirmModalHandler = () => {
-    deleteCelebrity(dispatchCelebrities, activeSlide);
-    closeModalHandler();
-  };
-
-  const updateCelebrityHandler = (formData) => {
-    updateCelebrity(
-      {
-        id: activeSlide,
-        ...formData,
-      },
-      dispatchCelebrities
-    );
-  };
-
   return (
     <div className="app">
       {isModelOpen && (
         <Modal>
           <ModalContent
             closeModalHandler={closeModalHandler}
-            confirmModalHandler={confirmModalHandler}
+            deleteCelebrityHandler={deleteCelebrityHandler}
             id={activeSlide}
           />
         </Modal>
@@ -67,7 +67,6 @@ function App() {
       <div className="celebrities-list">
         {celebrities.map((data) => (
           <Celebrity
-            dispatchCelebrities={dispatchCelebrities}
             picture={data.picture}
             fullname={data.fullname}
             age={data.age}
@@ -76,7 +75,7 @@ function App() {
             desc={data.desc}
             key={data.id}
             id={data.id}
-            isActive={activeSlide === data.id ? true : false}
+            isActive={activeItem === data.id ? true : false}
             accordianHandler={accordianHandler}
             openModalHandler={openModalHandler}
             updateCelebrityHandler={updateCelebrityHandler}

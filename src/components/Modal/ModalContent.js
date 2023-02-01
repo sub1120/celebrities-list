@@ -1,6 +1,6 @@
 import "./ModalContent.css";
 
-const ModalContent = ({ confirmModalHandler, closeModalHandler }) => {
+const ModalContent = ({ deleteCelebrityHandler, closeModalHandler }) => {
   return (
     <div className="confirm">
       <div>Are you sure want to delete?</div>
@@ -8,7 +8,10 @@ const ModalContent = ({ confirmModalHandler, closeModalHandler }) => {
         <button className="confirm-no" onClick={() => closeModalHandler()}>
           Cancel
         </button>
-        <button className="confirm-yes" onClick={() => confirmModalHandler()}>
+        <button
+          className="confirm-yes"
+          onClick={() => deleteCelebrityHandler()}
+        >
           Delete
         </button>
       </div>

@@ -1,4 +1,4 @@
-const stateReducer = function (state, action) {
+const appStateReducer = function (state, action) {
   switch (action.type) {
     case "LOAD_CELEBRITIES":
       return [...action.payload];
@@ -17,4 +17,4 @@ const stateReducer = function (state, action) {
   }
 };
 
-export default stateReducer;
+export default appStateReducer;

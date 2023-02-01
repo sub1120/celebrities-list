@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { containDigit, isDigit } from "../../utils/helper";
 import "./Celebrity.css";
-import { containDigit, isDigit } from "./utils/helper";
 
 const Celebrity = ({
   picture,
