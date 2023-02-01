@@ -1,5 +1,5 @@
 import "./App.css";
-import Celeb from "./Celeb";
+import Celeb from "./Celebrity";
 import { useEffect, useReducer, useState } from "react";
 import stateReducer from "./state/reducer";
 import {
