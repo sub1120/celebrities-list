@@ -1,5 +1,5 @@
 import "./App.css";
-import Celeb from "./Celebrity";
+import Celebrity from "../components/Celebrity";
 import { useEffect, useReducer, useState } from "react";
 import stateReducer from "./state/reducer";
 import {
@@ -66,7 +66,7 @@ function App() {
       <h1>Celibrities</h1>
       <div className="celebrities-list">
         {celebrities.map((data) => (
-          <Celeb
+          <Celebrity
             dispatchCelebrities={dispatchCelebrities}
             picture={data.picture}
             fullname={data.fullname}
@@ -80,7 +80,7 @@ function App() {
             accordianHandler={accordianHandler}
             openModalHandler={openModalHandler}
             updateCelebrityHandler={updateCelebrityHandler}
-          ></Celeb>
+          ></Celebrity>
         ))}
       </div>
     </div>
