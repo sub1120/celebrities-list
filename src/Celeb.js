@@ -47,6 +47,13 @@ const Celeb = ({
         error: `Fill all fields!`,
       });
 
+    if (isNaN(formData.age)) {
+      return setFormData({
+        ...formData,
+        error: `Age must be digit!`,
+      });
+    }
+
     updateCelebrity(
       {
         id: id,
