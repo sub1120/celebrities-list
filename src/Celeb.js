@@ -50,11 +50,17 @@ const Celeb = ({
   };
 
   const cancleHandler = () => {
+    setFormData({
+      fullname,
+      age,
+      gender,
+      country,
+      desc,
+    });
     setEditMode(false);
   };
 
   const editHandler = () => {
-    console.log("ds");
     setEditMode(true);
   };
 
@@ -86,7 +92,7 @@ const Celeb = ({
             </div>
           </div>
           <div className="plus-icon action-button" onClick={tabHandler}>
-            <span class="material-symbols-outlined">add</span>
+            <span className="material-symbols-outlined">add</span>
           </div>
         </section>
 
@@ -142,26 +148,29 @@ const Celeb = ({
               ></textarea>
             </div>
           </section>
-          <section className="actions">
-            <div
-              className={`action-button ${
-                isEditMode ? "done-icon" : "edit-icon"
-              }`}
-              onClick={!isEditMode ? editHandler : submitHandler}
-            >
-              <span className="material-symbols-outlined">
-                {!isEditMode ? "edit" : "check_circle"}
-              </span>
-            </div>
-            <div
-              className={`action-button ${
-                isEditMode ? "del-icon" : "cancel-icon"
-              }`}
-              onClick={!isEditMode ? deleteHandler : cancleHandler}
-            >
-              <span className="material-symbols-outlined">
-                {!isEditMode ? "delete" : "cancel"}
-              </span>
+          <section className="bottom">
+            <div className="error"></div>
+            <div className="actions">
+              <div
+                className={`action-button ${
+                  isEditMode ? "done-icon" : "edit-icon"
+                }`}
+                onClick={!isEditMode ? editHandler : submitHandler}
+              >
+                <span className="material-symbols-outlined">
+                  {!isEditMode ? "edit" : "check_circle"}
+                </span>
+              </div>
+              <div
+                className={`action-button ${
+                  isEditMode ? "del-icon" : "cancel-icon"
+                }`}
+                onClick={!isEditMode ? deleteHandler : cancleHandler}
+              >
+                <span className="material-symbols-outlined">
+                  {!isEditMode ? "delete" : "cancel"}
+                </span>
+              </div>
             </div>
           </section>
         </div>

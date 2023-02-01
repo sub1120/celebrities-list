@@ -80,10 +80,19 @@ label {
   border: none;
 }
 
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error {
+  color: rgb(235, 34, 34);
+}
+
 .actions {
   display: flex;
-  justify-content: flex-end;
-  gap: 10px;
+  gap: 20px;
 }
 
 .action-button {
