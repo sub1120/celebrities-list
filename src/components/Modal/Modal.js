@@ -2,11 +2,6 @@ import ReactDOM from "react-dom";
 import "./Modal.css";
 
 const OverlayModel = ({ closeModal, children }) => {
-  const close = (event) => {
-    event.stopPropagation();
-    closeModal();
-  };
-
   return (
     <div className="modal">
       <div className="modal-content">{children}</div>

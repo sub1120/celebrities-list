@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { deleteCelebrity, updateCelebrity } from "./state/actions";
+import { updateCelebrity } from "./state/actions";
 import "./Celeb.css";
 
 const Celeb = ({
