@@ -1,18 +1,4 @@
-.celeb {
-  width: 100%;
-  padding: 20px;
-  margin: 10px 0px;
-  border-radius: 10px;
-  border: 1px solid #756e6e;
-}
-
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-left {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -32,17 +18,6 @@
 
 .plus-icon span {
   color: #000000;
-}
-
-.content {
-  display: block;
-  height: 0px;
-  overflow: hidden;
-  transition: 0.5s ease-in-out height;
-}
-
-.content.active {
-  height: 300px;
 }
 
 .basic-details {

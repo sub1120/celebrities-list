@@ -10,6 +10,8 @@ import {
   updateCelebrity,
   deleteCelebrity,
 } from "./state/actions";
+import AccordianItem from "./components/Accordian/AccordianItem";
+import Accordian from "./components/Accordian/Accordian";
 
 const initialAppState = [];
 
@@ -40,8 +42,6 @@ function App() {
     );
   };
 
-  console.log(celebrities);
-
   const accordianHandler = (id) => {
     setActiveItem(id);
   };
@@ -66,23 +66,28 @@ function App() {
         </Modal>
       )}
       <div className="celebrities-list">
-        <h1 className="celebrities-heading">Celebrities</h1>
-        {celebrities.map((data) => (
-          <Celebrity
-            picture={data.picture}
-            fullname={data.fullname}
-            age={data.age}
-            gender={data.gender}
-            country={data.country}
-            desc={data.desc}
-            key={data.id}
-            id={data.id}
-            isActive={activeItem === data.id ? true : false}
-            accordianHandler={accordianHandler}
-            openModalHandler={openModalHandler}
-            updateCelebrityHandler={updateCelebrityHandler}
-          ></Celebrity>
-        ))}
+        <h1>Celebrities</h1>
+        <Accordian>
+          {celebrities.map((data) => (
+            <AccordianItem
+              id={data.id}
+              isActive={activeItem === data.id ? true : false}
+              accordianHandler={accordianHandler}
+            >
+              <Celebrity
+                picture={data.picture}
+                fullname={data.fullname}
+                age={data.age}
+                gender={data.gender}
+                country={data.country}
+                desc={data.desc}
+                key={data.id}
+                openModalHandler={openModalHandler}
+                updateCelebrityHandler={updateCelebrityHandler}
+              ></Celebrity>
+            </AccordianItem>
+          ))}
+        </Accordian>
       </div>
     </div>
   );
