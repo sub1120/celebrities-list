@@ -73,6 +73,7 @@ function App() {
               id={data.id}
               isActive={activeItem === data.id ? true : false}
               accordianHandler={accordianHandler}
+              key={data.id}
             >
               <Celebrity
                 picture={data.picture}
@@ -81,7 +82,6 @@ function App() {
                 gender={data.gender}
                 country={data.country}
                 desc={data.desc}
-                key={data.id}
                 openModalHandler={openModalHandler}
                 updateCelebrityHandler={updateCelebrityHandler}
               ></Celebrity>

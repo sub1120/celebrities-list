@@ -124,14 +124,17 @@ const Celebrity = ({
         <div>
           <label htmlFor="gender">Gender</label>
           <br />
-          <input
-            className={`input ${!isEditMode ? "edit" : ""}`}
-            type="text"
+          <select
             name="gender"
+            className={`input ${!isEditMode ? "edit" : ""}`}
+            disabled={!isEditMode}
             value={formData.gender}
             onChange={inputChangeHandler}
-            disabled={!isEditMode}
-          ></input>
+          >
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="other">other</option>
+          </select>
         </div>
         <div>
           <label htmlFor="country">Country</label>
