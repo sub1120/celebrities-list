@@ -164,26 +164,30 @@ const Celebrity = ({
         </div>
       </section>
 
-      <section className="bottom">
+      <section className="actions">
         <div className="error">{formData.error}</div>
-        <div className="actions">
+        <div className="action-buttons">
           <div
-            className={`action-button ${
-              isEditMode ? "done-icon" : "edit-icon"
-            }`}
+            className="button"
             onClick={!isEditMode ? editHandler : saveHandler}
           >
-            <span className="material-symbols-outlined">
+            <span
+              className={`material-symbols-outlined ${
+                isEditMode ? "done-icon" : "edit-icon"
+              }`}
+            >
               {!isEditMode ? "edit" : "check_circle"}
             </span>
           </div>
           <div
-            className={`action-button ${
-              isEditMode ? "del-icon" : "cancel-icon"
-            }`}
+            className="button"
             onClick={!isEditMode ? deleteHandler : cancelHandler}
           >
-            <span className="material-symbols-outlined">
+            <span
+              className={`material-symbols-outlined ${
+                isEditMode ? "delete-icon" : "cancel-icon"
+              }`}
+            >
               {!isEditMode ? "delete" : "cancel"}
             </span>
           </div>

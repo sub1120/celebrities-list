@@ -40,7 +40,7 @@ label {
 }
 
 .input.edit {
-  border: none;
+  border: 1px solid #ffffff;
 }
 
 .textarea {
@@ -53,10 +53,10 @@ label {
 }
 
 .textarea.edit {
-  border: none;
+  border: 1px solid #ffffff;
 }
 
-.bottom {
+.actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,20 +66,20 @@ label {
   color: rgb(235, 34, 34);
 }
 
-.actions {
+.action-buttons {
   display: flex;
   gap: 20px;
 }
 
-.action-button {
+.button {
   cursor: pointer;
 }
 
-.del-icon span,
-.cancel-icon span {
+.delete-icon,
+.cancel-icon {
   color: rgb(235, 34, 34);
 }
 
-.done-icon span {
+.done-icon {
   color: rgb(30, 141, 30);
 }
