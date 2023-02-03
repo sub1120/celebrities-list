@@ -2,12 +2,24 @@
 
 ## Submission Insights
 
+---
+
 - Developed in 12 hours of productive work.
 - Clean and Optimized code.
 - No external CSS library.
 - Mobile resposive.
 
+## Sample Screenshots
+
+---
+
+| List View                     | Info View                      | Edit View                      | Delete View                     |
+| ----------------------------- | ------------------------------ | ------------------------------ | ------------------------------- |
+| ![List View](./images/S1.png) | ![Info View ](./images/S2.png) | ![Edit View ](./images/S3.png) | ![Delete View](./images/S4.png) |
+
 ## Assginment Instructions
+
+---
 
 You are a famous hacker who has access to a list of the world's most famous celebrities.
 You have to create a system where you can view and edit their details to hide their public presence.
